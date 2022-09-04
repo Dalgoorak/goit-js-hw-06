@@ -10,4 +10,5 @@ function onInputChange(event) {
   } else {
     nameLabel.textContent = event.currentTarget.value;
   }
+  return;
 }
