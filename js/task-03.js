@@ -27,4 +27,12 @@ galleryList.setAttribute(
   "list-style-type:none; display: flex; gap: 10px;"
 );
 
-// console.log(galleryList);
+// Друге рішення
+
+// const list = images.map(
+//   ({ url, alt }) => `<li><img src="${url}" alt="${alt}" width="300"></li>`
+// );
+
+// document
+//   .querySelector(".gallery")
+//   .insertAdjacentHTML("beforeend", list.join(""));
