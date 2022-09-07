@@ -15,17 +15,24 @@ const images = [
 
 const galleryList = document.querySelector(".gallery");
 
-images.forEach((el) => {
-  galleryList.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`
-  );
-});
+const markup = images
+  .map(({ url, alt }) => {
+    return `<li><img src = "${url} alt = "${alt}" width = "300"></li>`;
+  })
+  .join("");
 
-galleryList.setAttribute(
-  "style",
-  "list-style-type:none; display: flex; gap: 10px;"
-);
+galleryList.insertAdjacentHTML("beforeend", markup);
+
+galleryList.style.display = "flex";
+galleryList.style.flexWrap = "column-reverse";
+galleryList.style.listStyle = "none";
+galleryList.style.gap = "20px";
+galleryList.style.justifyContent = "center";
+
+// galleryList.setAttribute(
+//   "style",
+//   "list-style-type:none; display: flex; gap: 10px;"
+// );
 
 // Друге рішення
 
